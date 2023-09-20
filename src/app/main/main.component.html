@@ -1,0 +1,72 @@
+
+<mat-sidenav-container autosize [hasBackdrop]="false">
+a
+  <mat-sidenav #sidenav opened mode="side">
+    <div class="sidenav-header">
+      <a mat-icon-button (click)="sidenav.close()">
+        <mat-icon>menu</mat-icon>
+      </a>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item>
+       <mat-icon>library_books</mat-icon>
+       <span>Assigned Orders</span>
+      </a>
+    </mat-nav-list>
+    <h3>USERS</h3>
+     <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon>persons</mat-icon>
+        <span>Clients</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span>Admins</span>
+      </a>
+    </mat-nav-list>
+    <h3>MISC</h3>
+     <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon>info</mat-icon>
+        <span>Website info</span>
+      </a>
+      <a mat-list-item routerLink="countries" routerLinkActive="active">
+        <mat-icon>flag</mat-icon>
+        <span>Countries</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>location_city</mat-icon>
+        <span>Cities</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>photo_library</mat-icon>
+        <span>Slider Banners</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon>notifications</mat-icon>
+        <span>Notifications</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+   
+    <main>
+      <nav class="d-flex justify-content-between align-items-center w-full">
+        <div>
+          <a mat-icon-button *ngIf="!sidenav.opened" (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+          </a>
+        </div>
+        <div class="d-flex gap-2 align-items-center">
+          <button class="custom-button">Arabic</button>
+          <div class="avatar rounded-circle"></div>
+        </div>
+      </nav>
+      <mat-divider></mat-divider>
+      <router-outlet></router-outlet>
+    </main>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

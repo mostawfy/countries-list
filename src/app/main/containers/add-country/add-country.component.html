@@ -1,0 +1,15 @@
+<div class="section-container">
+  <h2 class="mb-5">Create new country</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-row">
+      <label for="country">Country</label>
+      <div class="form-input-wrapper">
+        <mat-icon>flag</mat-icon>
+        <input type="country" name="country" id="country" placeholder="Enter a country" formControlName="country">
+      </div>
+      <div class="input-error" *ngIf="this.form.get('country')?.touched && this.form.get('country')?.hasError('required')">Field is required</div>
+      <div class="input-error" *ngIf="this.form.get('country')?.touched && this.form.get('country')?.hasError('minlength')">Minimum length is 3 characters</div>
+    </div>
+    <button type="submit" class="custom-button">Create</button>
+  </form>
+</div>

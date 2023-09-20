@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; color: #666; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.form-input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  gap: 1rem;
+}
+
+input {
+  background-color: inherit;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
+}
+
+.custom-button {
+  background-color: darkcyan;
+  outline: none;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  min-width: 100px;
+  transition: opacity 0.5s ease;
+}
+
+.custom-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.custom-button:not(:disabled):hover {
+  opacity: 0.8;
+}
+
+
+.input-error {
+  color: red;
+  padding: 0.2rem 1.5rem 0;
+  font-size: 12px;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: #fff;
+}
+
+
+.section-container {
+  padding: 2rem;
+  max-width: 1200px;
+}

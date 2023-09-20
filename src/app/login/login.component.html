@@ -1,0 +1,30 @@
+<div class="login-card shadow rounded-lg p-5">
+  <div class="login-card-heading text-center">
+    <h2 class="mb-2">Sign In</h2>
+    <p class="text-muted mb-4">Reports and Website and App Manager</p>
+  </div>
+  <div class="login-card-divider my-5">
+    <small>Sign in with Email</small>
+    <mat-divider></mat-divider>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-row">
+      <label for="email">Email</label>
+      <div class="form-input-wrapper">
+        <mat-icon>mail</mat-icon>
+        <input type="email" name="email" id="email" placeholder="Enter your email" formControlName="email">
+      </div>
+      <div class="input-error" *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('required')">Field is required</div>
+      <div class="input-error" *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('email')">Invalid email</div>
+    </div>
+    <div class="form-row">
+      <label for="password">Enter Password</label>
+      <div class="form-input-wrapper">
+        <mat-icon>lock</mat-icon>
+        <input type="password" name="password" id="password" placeholder="Enter you password" formControlName="password">
+      </div>
+      <div class="input-error" *ngIf="this.loginForm.get('password')?.touched && this.loginForm.get('password')?.hasError('required')">Field is required</div>
+    </div>
+    <button type="submit" class="custom-button" [disabled]="loginForm.invalid">Sign In</button>
+  </form>
+</div>
